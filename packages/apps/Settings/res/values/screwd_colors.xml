@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="setting_separator">#ff484848</color>
+    <color name="extension_list_item_color">#ff999999</color>
+    <color name="floating_action_button_touch_tint">#80ffffff</color>
+
+    <!-- DSLV colors -->
+    <color name="dslv_icon_dark">#ff009688</color>
+    <color name="dslv_float_background_color">#ff1b1f23</color>
+
+
+    <color name="white">#ffffffff</color>
+    <color name="divider">#1fffffff</color>
+    <color name="ripple_material_dark">#4dffffff</color>
+
+    <!-- Expanded desktop -->
+    <drawable name="expanded_item_bg_activated">#ffEEEEEE</drawable>
+    <drawable name="expanded_item_bg">@android:color/background_light</drawable>
+    <color name="expanded_button_color_normal">#4CAF50</color>
+    <color name="expanded_button_color_close">#F44336</color>
+
+    <!-- Gesture Anywhere -->
+    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
+    
+    <!-- Dashboard category title text color -->
+    <color name="dashboard_category_title_text">@color/theme_accent</color>
+    
+    <color name="storage_summary_title_color">#ff607d8b</color>
+    
+    <!-- Qs tiles -->
+    <color name="qs_tile_tint_color">@color/col_accnt</color>
+    <color name="qs_text_color">@color/list_item_title</color>
+    <color name="qs_tile_default_background_color">@color/cardlayout_bg</color>
+    <color name="col_accnt">#ff0288d1</color>
+    <color name="list_item_title">#ffeeeeee</color>
+    <color name="cardlayout_bg">#ff424242</color>
+    <color name="background_color_gray">#ddd</color>
+    
+    <color name="theme_accent">#ff009688</color>
+    <color name="action_picker_fab_background">@color/theme_accent</color>
+
+</resources>
