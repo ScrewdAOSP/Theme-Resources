@@ -81,7 +81,7 @@ declare -a values=('all_search_engines.xml' 'appmsg_colors.xml' 'arrays.xml' 'at
 
 declare -a core=('java' 'jni' 'tests')
 
-declare -a theme_packages=('Contacts' 'ContactsCommon' 'DeskClock' 'Dialer' 'Email' 'Gallery2' 'InCallUI'
+declare -a theme_packages=('Contacts' 'ContactsCommon' 'DeskClock' 'DUI' 'Dialer' 'Email' 'Gallery2' 'InCallUI'
                            'Launcher3' 'LockClock' 'Messaging' 'OmniSwitch' 'PhoneCommon' 'Settings' 'Stk' 'ThemeChooser')
 
 cd $WORKING_DIR
@@ -143,4 +143,16 @@ mkdir Theme-Resources/frameworks
 echo "Copying all files to $WORKING_DIR/Theme-Resources"
 copy_all ${theme_packages[@]}
 cp -r $WORKING_DIR/frameworks/base/core $WORKING_DIR/frameworks/base/packages $WORKING_DIR/Theme-Resources/frameworks
+#Copy external resouces into SystemUI
+echo "Preparing external DUI resources"
+cd $WORKING_DIR/Theme-Resources
+#DUI
+cd packages/apps/DUI/res/values
+echo "Renaming XML files in values"
+for filename in *.xml; do mv "$filename" "dui_$filename"; done;
+cd $WORKING_DIR/Theme-Resources
+echo "Copying DUI resources to SystemUI"
+cp -r packages/apps/DUI/res frameworks/packages/SystemUI/
+echo "Deleting DUI"
+rm -rf packages/apps/DUI/
 cd /media/ubuntu/a4f261fb-46a8-4f2b-9ab7-96a0419b3a9f/ScrewdAOSP
