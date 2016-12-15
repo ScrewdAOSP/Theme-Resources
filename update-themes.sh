@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-WORKING_DIR=/media/ubuntu/a4f261fb-46a8-4f2b-9ab7-96a0419b3a9f/ScrewdAOSP
+WORKING_DIR=/home/mrapocalypse/ScrewdN
 
 function delete_useless () {
   declare -a array=($@)
@@ -57,7 +57,7 @@ function copy_all () {
   done
 }
 
-declare -a root=('Theme-Resources' 'abi' 'bionic' 'art' 'bootable' 'build' 'dalvik' 'development' 'device' 'external' 'frameworks' 'hardware' 'kernel' 'libcore' 'libnativehelper' 'manifest' 'ndk' 'out' 'packages' 'pdk' 'prebuilts'
+declare -a root=('Theme-Resources' 'abi' 'bionic' 'art' 'bootable' 'build' 'dalvik' 'development' 'device' 'external' 'frameworks' 'hardware' 'kernel' 'libcore' 'libnativehelper' 'platform_manifest' 'ndk' 'out' 'packages' 'pdk' 'prebuilts'
                  'sdk' 'system' 'tools' 'vendor')
 
 declare -a frameworks=('api' 'cmds' 'data' 'docs' 'drm' 'graphics' 'include' 'keystore' 'libs' 'location' 'media' 'native' 'nfc-extras' 'obex' 'opengl' 'policy' 'rs' 'samples' 'sax' 'security-bridge' 'services' 'telecomm'
@@ -66,12 +66,12 @@ declare -a frameworks=('api' 'cmds' 'data' 'docs' 'drm' 'graphics' 'include' 'ke
 declare -a common=('common.mk' '.classpath' '.git' '.gitignore' '.idea' '.project' 'assets' 'build.gradle' 'src' 'tests' 'Android.mk' 'CleanSpec.mk' 'lint.xml' 'MODULE_LICENSE_APACHE2' 'NOTICE' 'preloaded-classes'
                    'proguard.cfg' 'proguard.flags' 'proguard-test.flags' 'wrap_alpha.py' 'tools' 'tests' 'extensions_src' 'mkprojectfile' 'project.properties' 'hero.png' 'LICENSE' 'README.md' 'script' 'jni' 'res_p' 'sounds'
                    'src_pd' 'src_pd_gcam' 'tests_camera' 'version.mk' 'COPYING' 'ReadMe.md' 'WallpaperPicker' 'protos' 'util' 'fill_screens.py' 'print_db.py' 'update_gallery_files.py' 'update_system_wallpaper_cropper.py'
-                   'cyanoden-dsp' 'emailcommon' 'transition' 'TestCommon' 'provider_src' 'gallerycommon' 'jni_jpegstream' 'apptests')
+                   'cyanoden-dsp' 'emailcommon' 'transition' 'TestCommon' 'provider_src' 'gallerycommon' 'jni_jpegstream' 'apptests' 'libs' 'info_lookup' 'src_plugin' 'perf-tests' 'app-perf-tests' 'src-N' 'src-pre-N' 'build-app.gradle' 'build-library.gradle' 'local.properties' 'gradlew.bat' 'gradlew' 'gradle' 'build.gradle' '.idea' 'settings.gradle' 'gradle.properties' 'proguard-rules.pro' 'v' '*.jar' 'build' 'ForceProguard.mk' 'proguard-release.flags' 'Readme.md')
 
 declare -a packages=('StatementService' 'BackupRestoreConfirmation' 'CaptivePortalLogin' 'DefaultContainerService' 'ExternalStorageProvider' 'FakeOemFeatures' 'FusedLocation' 'InputDevices' 'Keyguard' 'PrintSpooler' 'SettingsProvider'
-                     'SharedStorageBackup' 'Shell' 'VpnDialogs' 'WAPPushManager' 'WAPPushManager' 'WallpaperCropper' 'services')
+                     'SharedStorageBackup' 'Shell' 'VpnDialogs' 'WAPPushManager' 'WAPPushManager' 'WallpaperCropper' 'services' 'WallpaperBackup' 'PrintRecommendationService' 'Osu' 'MtpDocumentsProvider' 'ExtShared' 'ExtServices' 'CtsShim')
 
-declare -a res=('Android.mk' 'AndroidManifest.xml' 'MODULE_LICENSE_APACHE2' 'NOTICE' 'lint.xml' 'assets' 'menu*' 'values-*' 'xml*' 'interpolator' 'raw*' 'anim' 'animator' 'transition' 'MakeJavaSymbols.sed')
+declare -a res=('Android.mk' 'AndroidManifest.xml' 'MODULE_LICENSE_APACHE2' 'NOTICE' 'lint.xml' 'assets' 'menu*' 'values-*' 'xml*' 'interpolator' 'raw*' 'anim*' 'animator' 'transition' 'MakeJavaSymbols.sed' 'tests' 'src' 'build.gradle' 'proguard.flags' 'setting' 'gradlew' 'gradlew.bat')
 
 declare -a values=('all_search_engines.xml' 'appmsg_colors.xml' 'arrays.xml' 'attrs_manifest.xml' 'bookmarks_icons.xml' 'bools.xml' 'config.xml' 'defaults.xml' 'donottranslate.xml' 'donottranslate_config.xml'
                    'aliases.xml' 'crop_colors.xml' 'dslv_attrs.xml' 'animation_constants.xml' 'donottranslate-cldr.xml' 'donottranslate-maps.xml' 'donottranslate-names.xml' 'donottranslate_material.xml'
@@ -79,10 +79,12 @@ declare -a values=('all_search_engines.xml' 'appmsg_colors.xml' 'arrays.xml' 'at
                    'public.xml' 'strings.xml' 'symbols.xml' 'vpi_attrs.xml' 'vpi_defaults.xml' 'cm_arrays.xml' 'cm_plurals.xml' 'cm_strings.xml' 'custom_strings.xml' 'custom_arrays.xml' 'vpi__defaults.xml' 'vpi__attrs.xml'
                    'nontranslatables.xml' 'accountprovider.xml' 'constants.xml' 'codeaurora_strings.xml' 'filtershow_ids.xml' 'filtershow_strings.xml' 'filtershow_values.xml' 'filtershow_values_attrs.xml')
 
-declare -a core=('java' 'jni' 'tests')
+declare -a core=('java' 'jni' 'tests' 'src')
 
-declare -a theme_packages=('Contacts' 'ContactsCommon' 'DeskClock' 'DUI' 'Dialer' 'Email' 'Gallery2' 'InCallUI'
-                           'Launcher3' 'LockClock' 'Messaging' 'OmniSwitch' 'PhoneCommon' 'Settings' 'Stk' 'ThemeChooser')
+declare -a theme_packages=('Contacts' 'ContactsCommon' 'DeskClock' 'DUI' 'Dialer' 'Email' 'Gallery2'
+                           'Launcher3' 'LockClock' 'Messaging' 'OmniSwitch' 'PhoneCommon' 'ScrewShop' 'Settings' 'Stk')
+
+declare -a extra=('java' '.idea' 'gradle' '.gitignore' 'build.gradle' 'gradlew' 'gradlew.bat' 'local.properties' 'proguard-rules.pro' 'proguard.flags')
 
 cd $WORKING_DIR
 echo "Removing files so we can clean sync"
@@ -91,7 +93,7 @@ cd .repo
 rm -rf local_manifests
 cd ..
 echo "Repo Syncing........."
-repo sync >> /dev/null
+repo sync --force-sync >> /dev/null
 if [ $? -eq 0 ]; then
   echo "Repo Sync success"
 else
@@ -124,6 +126,12 @@ cd res
 delete_useless ${res[@]}
 cd values
 delete_useless ${values[@]}
+cd ../../../EasterEgg
+delete_useless ${common[@]}
+cd res
+delete_useless ${res[@]}
+cd values
+delete_useless ${values[@]}
 cd ../../../../core
 delete_useless ${core[@]}
 cd res
@@ -143,16 +151,7 @@ mkdir Theme-Resources/frameworks
 echo "Copying all files to $WORKING_DIR/Theme-Resources"
 copy_all ${theme_packages[@]}
 cp -r $WORKING_DIR/frameworks/base/core $WORKING_DIR/frameworks/base/packages $WORKING_DIR/Theme-Resources/frameworks
-#Copy external resouces into SystemUI
-echo "Preparing external DUI resources"
+cd /home/mrapocalypse/ScrewdN/Theme-Resources
+cd $WORKING_DIR/Theme-Resources/packages/apps/Dialer/InCallUI
+delete_useless ${res[@]}
 cd $WORKING_DIR/Theme-Resources
-#DUI
-cd packages/apps/DUI/res/values
-echo "Renaming XML files in values"
-for filename in *.xml; do mv "$filename" "dui_$filename"; done;
-cd $WORKING_DIR/Theme-Resources
-echo "Copying DUI resources to SystemUI"
-cp -r packages/apps/DUI/res frameworks/packages/SystemUI/
-echo "Deleting DUI"
-rm -rf packages/apps/DUI/
-cd /media/ubuntu/a4f261fb-46a8-4f2b-9ab7-96a0419b3a9f/ScrewdAOSP
