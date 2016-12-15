@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright 2014-2015 Euphoria-OS project
+     Copyright 2016 Screw'd AOSP
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,28 +16,36 @@
 -->
 <resources>
 
-    <style name="TextAppearance.StatusBar.WeatherTemp" parent="@*android:style/TextAppearance.StatusBar">
-        <item name="android:textSize">@dimen/status_bar_temp_text_size</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textColor">@color/status_bar_temp_text_color</item>
+    <!-- Pure Tuner Theme-->
+    <style name="ExTunerSettings" parent="@android:style/Theme.Material.Settings">
+        <item name="preferenceTheme">@style/TunerPreferenceTheme</item>
     </style>
-    
-    <style name="TextAppearance.StatusBar.Expanded.Date.White">
-        <item name="android:textSize">@dimen/qs_date_collapsed_size</item>
+    <!-- Custom Carrier Label -->
+    <style name="TextAppearance.StatusBar.CarrierLabel" parent="@*android:style/TextAppearance.StatusBar.Icon">
+        <!-- Note: must be dp to fit in status bar -->
+        <item name="android:textSize">@dimen/status_bar_carrier_height</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ffffff</item>
-    </style>
-
-    <style name="TextAppearance.StatusBar.Expanded.Weather">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/status_bar_carrier_color</item>
     </style>
 
-    <style name="TextAppearance.StatusBar.Expanded.Weather.Detailed">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ffffff</item>
+    <style name="TextAppearance.StatusBar.PhoneTicker"
+        parent="@*android:style/TextAppearance.StatusBar.Ticker">
+        <!-- Note: must be dp to fit in status bar -->
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <!-- Base battery metter drawable style -->
+    <style name="BatteryMeterViewDrawable">
+        <!-- Gravity used for positioning text within the battery meter -->
+        <item name="android:gravity">center</item>
+        <item name="blendMode">clear</item>
+    </style>
+
+    <!-- Battery meter drawable styles -->
+    <style name="BatteryMeterViewDrawable.Portrait"/>
+    <style name="BatteryMeterViewDrawable.Landscape"/>
+    <style name="BatteryMeterViewDrawable.Circle">
+        <item name="blendMode">overlay</item>
     </style>
 
 </resources>

@@ -24,7 +24,6 @@
 		android:id="@+id/button_list_container_top"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:elevation="@dimen/button_elevation"
 		android:orientation="vertical"
 		android:visibility="gone" >
 
@@ -32,13 +31,15 @@
 			android:id="@+id/button_list_top"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal" >
+			android:layout_gravity="center_horizontal"
+			android:scrollbars="none" >
 
 			<LinearLayout
 				android:id="@+id/button_list_items_top"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:orientation="horizontal" >
+				android:orientation="horizontal"
+				android:gravity="center_vertical" >
 			</LinearLayout>
 		</HorizontalScrollView>
 	</LinearLayout>
@@ -46,6 +47,7 @@
 	<include layout="@layout/recents_rambar" />
 
 	<LinearLayout
+	    android:id="@+id/recents_or_appdrawer"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" >
 
@@ -79,14 +81,14 @@
 				android:layout_gravity="center"
 				android:scaleType="centerInside" />
 
-			<org.omnirom.omniswitch.ui.HorizontalListView
+			<org.omnirom.omniswitch.ui.FavoriteViewHorizontal
 				android:id="@+id/favorite_list_horizontal"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:layout_gravity="center_horizontal" />
 		</LinearLayout>
 
-		<GridView
+		<org.omnirom.omniswitch.ui.AppDrawerView
 			android:id="@+id/app_drawer"
 			android:layout_width="match_parent"
 			android:layout_height="300dp"
@@ -101,7 +103,6 @@
 		android:id="@+id/button_list_container_bottom"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:elevation="@dimen/button_elevation"
 		android:orientation="vertical"
 		android:visibility="gone" >
 	</LinearLayout>

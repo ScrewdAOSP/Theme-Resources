@@ -24,7 +24,6 @@
 		android:id="@+id/button_list_container_top"
 		android:layout_width="wrap_content"
 		android:layout_height="match_parent"
-		android:elevation="@dimen/button_elevation"
 		android:visibility="gone"
 		android:layout_marginEnd="3dp" >
 
@@ -32,18 +31,21 @@
 			android:id="@+id/button_list_top"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="bottom" >
+			android:layout_gravity="bottom"
+			android:scrollbars="none" >
 
 			<LinearLayout
 				android:id="@+id/button_list_items_top"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:orientation="vertical" >
+				android:orientation="vertical"
+				android:gravity="center_horizontal" >
 			</LinearLayout>
 		</ScrollView>
 	</LinearLayout>
 
 	<LinearLayout
+	    android:id="@+id/recents_or_appdrawer"
 		android:layout_width="wrap_content"
 		android:layout_height="match_parent" >
 
@@ -57,7 +59,8 @@
 				android:id="@+id/recent_list"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
-				android:divider="@null" />
+				android:divider="@null"
+				android:listSelector="@android:color/transparent" />
 			<TextView
 				android:id="@+id/no_recent_apps"
 				android:layout_width="wrap_content"
@@ -67,14 +70,17 @@
 				android:text="@string/no_recent_apps_title"
 				android:textSize="20sp"
 				android:visibility="gone" />
-			<ListView
+			<org.omnirom.omniswitch.ui.FavoriteViewVertical
 				android:id="@+id/favorite_list"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
-				android:divider="@null" />
+				android:divider="@null"
+				android:paddingStart="4dp"
+				android:listSelector="@android:color/transparent"
+				android:layout_gravity="center_horizontal" />
 		</LinearLayout>
 
-		<GridView
+		<org.omnirom.omniswitch.ui.AppDrawerView
 			android:id="@+id/app_drawer"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
@@ -82,14 +88,15 @@
 			android:numColumns="auto_fit"
 			android:smoothScrollbar="true"
 			android:stretchMode="spacingWidthUniform"
-			android:visibility="gone" />
+			android:listSelector="@android:color/transparent"
+			android:visibility="gone"
+			android:gravity="center_horizontal" />
 	</LinearLayout>
 
 	<LinearLayout
 		android:id="@+id/button_list_container_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="match_parent"
-		android:elevation="@dimen/button_elevation"
 		android:visibility="gone" >
 	</LinearLayout>
 
