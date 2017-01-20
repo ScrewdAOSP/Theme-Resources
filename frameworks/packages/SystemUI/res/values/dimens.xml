@@ -398,7 +398,7 @@
     <dimen name="keyguard_carrier_text_margin">16dp</dimen>
 
     <!-- Margin on the left side of the battery % in the header. -->
-    <dimen name="header_battery_margin_expanded">6dp</dimen>
+    <dimen name="header_battery_margin_expanded">4dp</dimen>
 
     <!-- Margin on the left side of the battery % when on Keyguard. -->
     <dimen name="header_battery_margin_keyguard">6dp</dimen>
@@ -679,4 +679,7 @@
 
     <!-- Network traffic monitor multi-line text size -->
     <dimen name="net_traffic_multi_text_size">8dp</dimen>
+
+    <dimen name="navbar_single_hand_mode_horizontal_threshhold">90dp</dimen>
+    <dimen name="navbar_single_hand_mode_vertical_threshhold">48dp</dimen>
 </resources>
