@@ -188,6 +188,14 @@
     <!-- Locale QS -->
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
 
+    <!-- AppSidebar -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+
+    <protected-broadcast android:name="android.intent.action.SCREEN_STATE_SERVICE_UPDATE" />
+
+    <!-- OmniJaws -->
+    <uses-permission android:name="org.omnirom.omnijaws.READ_WEATHER" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
@@ -248,6 +256,22 @@
         <service android:name=".omni.screenrecord.TakeScreenrecordService"
             android:process=":screenrecord"
             android:exported="false" />
+
+        <service android:name=".CPUInfoService"
+                android:exported="true" />
+
+        <receiver android:name=".BootReceiver" androidprv:systemUserOnly="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".screenstate.ScreenStateService"
+                android:exported="true" >
+            <intent-filter>
+               <android name="android.intent.action.SCREEN_STATE_SERVICE_UPDATE"/>
+            </intent-filter>
+        </service>
 
         <service android:name=".ImageWallpaper"
                 android:permission="android.permission.BIND_WALLPAPER"
@@ -495,6 +519,21 @@
             android:name=".keyguard.KeyguardService"
             android:exported="true"
             android:enabled="@bool/config_enableKeyguardService" />
+
+        <activity android:name=".statusbar.sidebar.SidebarConfigurationActivity"
+                  android:label="@string/title_activity_sidebar_configuration"
+                  android:taskAffinity=""
+                  android:excludeFromRecents="true"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".statusbar.sidebar.SidebarContentProvider"
+            android:authorities="org.chameleonos.sidebar.contentprovider" >
+        </provider>
 
         <activity android:name=".Somnambulator"
             android:label="@string/start_dreams"

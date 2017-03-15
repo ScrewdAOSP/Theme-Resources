@@ -40,9 +40,6 @@
     <java-symbol type="dimen" name="edge_gesture_perpendicular_distance" />
     <java-symbol type="dimen" name="edge_gesture_trigger_thickness" />
 
-    <!-- Quick settings tiles columns and rows config -->
-    <integer name="config_qs_num_rows_landscape_default">2</integer>
-
     <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
@@ -64,5 +61,28 @@
     the NORMAL notification background to be dark and the text to be light, this boolean
     needs to be set to false, to prevent the doze notifications from being light -->
     <bool name="config_invert_colors_on_doze">true</bool>
+
+    <!-- Automatic brightness enhancements -->
+    <integer name="config_autoBrightnessBrighteningLightFastDebounce">500</integer>
+
+    <!-- True if the notification's dynamic app icon/title tint should be optimised for dark
+    backgrounds (requires config_allowNotificationIconTextTinting to be true)-->
+    <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
+
+    <!-- The duration (in milliseconds) of recent app screen animation. -->
+    <integer name="config_recentDefaultDur">300</integer>
+
+    <!-- The duration (in milliseconds) of recent app screen exit animation. -->
+    <integer name="config_recentExitDur">450</integer>
+
+    <!-- Quick settings tiles columns and rows config -->
+    <integer name="config_qs_num_rows_landscape_default">2</integer>
+
+    <!-- Config IME switcher -->
+    <bool name="config_show_IMESwitcher">true</bool>
+
+    <!-- High Brightness Mode -->
+    <add-resource type="bool" name="config_supportHighBrightness"></add-resource>
+    <bool name="config_supportHighBrightness">false</bool>
 
 </resources>
